@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        h1{
+            text-align: center;
+        }
+        input[type=button]{
+            width:320px ; background-color: rgb(134, 248, 168); color: rgb(3, 3, 3);
+            padding: 10px; cursor: pointer; border-radius: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div style="text-align: center;">
+        <img width="100%" height="350px" src="https://scontent-lim1-1.xx.fbcdn.net/v/t31.18172-8/14480484_1753543048217309_8168587124694475449_o.jpg?_nc_cat=100&ccb=1-7&_nc_sid=2a1932&_nc_ohc=XWkSY60nOdYQ7kNvgE7Iivn&_nc_ht=scontent-lim1-1.xx&_nc_gid=A0xx0QAXVSW-vepCmUNcOCe&oh=00_AYCrDvs4ciostDAu0fs1BraoM3dOdkYnOZjllvLv_SwYRg&oe=6724B44E" alt="">
+    <hr>
+    </div>
+    <table>
+        <div>
+            <tr>
+                <h1>Platos</h1>
+                <hr>
+            <tr>
+                <div>
+                    <td>
+                        <input type="button" onclick="ver(1);" value="Retroceder">
+                        <input type="button" onclick="ver(2);" value="Avanzar">
+                    </td>
+                </div>
+                <div style="padding-left: 40% ;">
+                    <input type="text" name="" value="Causa" id="txtNom" disabled>
+                    <br>
+                    <img src="img/causa.jpg" width="350px" id="img" alt="">
+                    <br>
+                    <input type="text" name="" id="txtPrecio" value="20.00" disabled>
+                </div>
+            </tr>
+        </div>
+    </table>
+    <script>
+         let comidas = ["causa.jpg","arroz.jpg","ceviche.jpg"];
+        let can= comidas.length;
+        let precios = [20.00,30.00,35.50];
+        //sera reconocida en cualquier funtion
+        let con = 0;
+        function ver(x){
+            if (x==2){
+                if(con < can-1) // puede ir sin llave cuando hay 
+                    con=con+1; // una sola instruccion
+            }else{
+                if (con>0){
+                    con=con-1;
+                }
+            }
+            let com = comidas[con];
+            let imagen = com;
+            let pos = comidas[con].indexOf(".")
+            let nombre = comidas[con].substring(0,pos);
+            document.getElementById("img").src="img/"+imagen;
+            document.getElementById("txtPrecio").value = precios[con];
+            document.getElementById("txtNom").value = nombre;
+        }
+    </script>
+</body>
+</html>

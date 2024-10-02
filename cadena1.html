@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+        let pro = ["arroz.jpg","causa.jpg"];
+        let can =pro [1].length; //cantidad de caracteres
+        //hallar la posicion del punto
+        let pos = pro[1].indexOf(".")
+        // muestra el nombre del pro
+        let nombre = pro[1].substring(0,pos);
+        alert(nombre);
+        // muestra la extension
+        let ext = pro[1].substring(pos+1,can);
+        alert(ext)
+    </script>
+</body>
+</html>

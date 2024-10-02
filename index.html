@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Restaurante Criollo</h1>
+    <hr>
+    <input type="button" onclick="ver(1);" value="Retroceder">
+    <input type="button" onclick="ver(2);" value="Avanzar">
+    <div>
+        <input type="text" name="" value="Causa" id="txtNom" disabled>
+        <br>
+        <img src="img/causa.jpg" width="350px" id="img" alt="">
+        <br>
+        <input type="text" name="" id="txtPrecio" value="20.00" disabled>
+    </div>
+    <script>
+        //arreglos
+        let comidas = ["causa.jpg","arroz.jpg","ceviche.jpg"];
+        let can= comidas.length;
+        let precios = [20.00,30.00,35.50];
+        //sera reconocida en cualquier funtion
+        let con = 0;
+        //ver tiene un parametro llamado x
+        //ver(1)  el 1 es llamado argumento
+        function ver(x){
+            if (x==2){
+                if(con < can-1) // puede ir sin llave cuando hay 
+                    con=con+1; // una sola instruccion
+            }else{
+                if (con>0){
+                    con=con-1;
+                }
+            }
+            let com = comidas[con];
+            let imagen = com;
+            let pos = comidas[con].indexOf(".")
+            let nombre = comidas[con].substring(0,pos);
+            document.getElementById("img").src="img/"+imagen;
+            document.getElementById("txtPrecio").value = precios[con];
+            document.getElementById("txtNom").value = nombre;
+            }
+    </script>
+</body>
+</html>
